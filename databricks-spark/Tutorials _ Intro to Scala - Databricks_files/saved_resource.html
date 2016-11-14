@@ -1,0 +1,54 @@
+
+<!-- saved from url=(0012)about:srcdoc -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="https://databricks-prod-cloudfront.cloud.databricks.com/static/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855/lib/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: transparent;
+    }
+  </style>
+  <!--<base target="_blank">--><base href="." target="_blank">
+  <script>
+    (function() {
+      var parentUri = 'https://docs.cloud.databricks.com';
+      var originalWidth = null;
+      var originalHeight = null;
+      window.onerror = function(error) {
+        window.parent.postMessage({
+          type: 'frameJsError',
+          loc: window.location.href,
+          frameId: '856f12f5-4bce-473a-867d-51352d22adab',
+          error: error,
+        }, parentUri);
+      };
+      window.onload = function() {
+        originalWidth = document.body.scrollWidth;
+        originalHeight = document.body.scrollHeight;
+        window.parent.postMessage({
+          type: 'frameResizeEvent',
+          frameId: '856f12f5-4bce-473a-867d-51352d22adab',
+          loc: window.location.href,
+          height: originalHeight,
+          width: originalWidth,
+        }, parentUri);
+      };
+      window.addEventListener('message', function(msg) {
+        var origin = msg.origin || msg.originalEvent.origin;
+        if (origin !== parentUri) {
+          console.error('Invalid origin', origin, parentUri);
+          return;
+        }
+
+        if (msg.data.type === 'frameSizedEvent') {
+          var xRatio = msg.data.frameWidth / originalWidth;
+          var yRatio = msg.data.frameHeight / originalHeight;
+          var scaleFactor = 1.0;
+          if (xRatio < 1 || yRatio < 1) {
+            scaleFactor = Math.min(xRatio, yRatio);
+          }
+          document.body.style['transform'] = 'scale(' + scaleFactor + ')';
+          document.body.style['transformOrigin'] = 'top left';
+        }
+      });
+    })();
+  </script>
+  </head><body style="transform: scale(1); transform-origin: left top 0px;"><h3 style="color:blue">Blue Text</h3></body></html>
